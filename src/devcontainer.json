@@ -1,0 +1,28 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
+{
+    "name": "{repo-name}",
+
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "{repo-name}-dev",
+    "workspaceFolder": "/src",
+    "initializeCommand": "(mkdir .devcontainer 2>/dev/null; touch .devcontainer/.env 2>/dev/null) || (mkdir .devcontainer 2> nul & type nul >> .devcontainer/.env 2> nul)",
+
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    // "features": {},
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bierner.markdown-mermaid",
+                "editorconfig.editorconfig",
+                "github.copilot",
+                "github.copilot-chat",
+                "mhutchie.git-graph",
+                "ms-dotnettools.csdevkit",
+                "ms-kubernetes-tools.vscode-kubernetes-tools",
+                "ryanluker.vscode-coverage-gutters"
+            ]
+        }
+    }
+}
