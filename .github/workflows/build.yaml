@@ -17,6 +17,6 @@ jobs:
           registryUsername: ${{ secrets.DOCKER_HUB_USERNAME }}
           registryPassword: ${{ secrets.DOCKER_HUB_TOKEN }}
           registryHost: docker.io
-          imageNames: spritelydev/dotnet8-pulumi-devcontainer
+          imageNames: spritelydev/dotnet8-pulumi-kubernetes-devcontainer
           context: ./src
           dockerfile: ./src/Dockerfile
