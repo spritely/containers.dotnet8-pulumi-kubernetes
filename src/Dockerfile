@@ -34,16 +34,16 @@ RUN apt-get update && apt-get install -y openssh-client \
     && AZ_DIST=$(lsb_release -cs) \
     # Obtain the version number from: https://learn.microsoft.com/en-us/cli/azure/release-notes-azure-cli
     # Only use the major, minor, and patch version numbers
-    && AZ_VER=2.69.0 \
+    && AZ_VER=2.72.0 \
     && echo "Types: deb\nURIs: https://packages.microsoft.com/repos/azure-cli/\nSuites: ${AZ_DIST}\nComponents: main\nArchitectures: $(dpkg --print-architecture)\nSigned-by: /etc/apt/keyrings/microsoft.gpg" | tee /etc/apt/sources.list.d/azure-cli.sources \
     && apt-get update && apt-get install -y azure-cli=${AZ_VER}-1~${AZ_DIST} \
     # Install Pulumi CLI, see: https://www.pulumi.com/docs/install/
     # To find a new version check this page: https://www.pulumi.com/docs/install/versions/
-    && curl -fsSL https://get.pulumi.com | sh -s -- --version 3.150.0 \
+    && curl -fsSL https://get.pulumi.com | sh -s -- --version 3.170.0 \
     # Install kubectl CLI, see: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
     # KUBECTL_VERSION=$(curl -L -s https://dl.k8s.io/release/stable.txt)
     # KUBECTL_VERSION will be something like v1.32.2 but commands below require the minor version only
-    && KUBECTL_MINOR_VERSION=v1.32 \
+    && KUBECTL_MINOR_VERSION=v1.33 \
     && curl -fsSL https://pkgs.k8s.io/core:/stable:/${KUBECTL_MINOR_VERSION}/deb/Release.key | gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg \
     && chmod 644 /etc/apt/keyrings/kubernetes-apt-keyring.gpg \
     && echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/${KUBECTL_MINOR_VERSION}/deb/ /" | tee /etc/apt/sources.list.d/kubernetes.list \
