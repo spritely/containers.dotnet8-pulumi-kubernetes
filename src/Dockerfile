@@ -24,7 +24,6 @@ RUN apt-get update && apt-get install -y openssh-client \
     apt-transport-https ca-certificates curl gnupg lsb-release \
     bats \
     git \
-    openssh-client \
     wget && \
     # The version of yq available in apt is very outdated so it must be manually installed
     # To find newer versions visit: https://github.com/mikefarah/yq/releases/
