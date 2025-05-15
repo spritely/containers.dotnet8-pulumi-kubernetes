@@ -38,11 +38,9 @@ RUN apt-get update && apt-get install -y openssh-client \
     && AZ_VER=2.69.0 \
     && echo "Types: deb\nURIs: https://packages.microsoft.com/repos/azure-cli/\nSuites: ${AZ_DIST}\nComponents: main\nArchitectures: $(dpkg --print-architecture)\nSigned-by: /etc/apt/keyrings/microsoft.gpg" | tee /etc/apt/sources.list.d/azure-cli.sources \
     && apt-get update && apt-get install -y azure-cli=${AZ_VER}-1~${AZ_DIST} \
-
     # Install Pulumi CLI, see: https://www.pulumi.com/docs/install/
     # To find a new version check this page: https://www.pulumi.com/docs/install/versions/
     && curl -fsSL https://get.pulumi.com | sh -s -- --version 3.150.0 \
-
     # Install kubectl CLI, see: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
     # KUBECTL_VERSION=$(curl -L -s https://dl.k8s.io/release/stable.txt)
     # KUBECTL_VERSION will be something like v1.32.2 but commands below require the minor version only
