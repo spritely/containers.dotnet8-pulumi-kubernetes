@@ -12,7 +12,7 @@
 # - Use the linux amd64 variant from #2
 # - Choose latest long-term-support (LTS) version of Ubuntu from #3
 # - Select the latest dotnet version from #4 that exists in #1
-FROM mcr.microsoft.com/dotnet/sdk:8.0.406-noble-amd64
+FROM mcr.microsoft.com/dotnet/sdk:8.0.411-noble-amd64
 
 # Clear this environment variable so xml docs from NuGet packages are unpackaged. The default dotnet/sdk image sets it to 'skip'.
 # See https://github.com/dotnet/dotnet-docker/issues/2790
