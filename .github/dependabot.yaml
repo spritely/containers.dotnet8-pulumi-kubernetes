@@ -9,7 +9,7 @@ updates:
       - dependency-name: dotnet/sdk
         update-types: ["version-update:semver-major"]
     groups:
-      all-actions:
+      all-docker:
         patterns:
           - "*"
   - package-ecosystem: github-actions
@@ -19,6 +19,6 @@ updates:
     schedule:
       interval: daily
     groups:
-      all-actions:
+      all-github-actions:
         patterns:
           - "*"
