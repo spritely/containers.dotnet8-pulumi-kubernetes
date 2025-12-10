@@ -2,5 +2,5 @@
 .env.example
 .gitignore
 devcontainer.json
-docker-compose.yml
+container-compose.template
 readme.md

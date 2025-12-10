@@ -8,6 +8,7 @@ permissions:
 
 jobs:
   build:
+    # Available runners: https://github.com/actions/runner-images
     runs-on: ubuntu-24.04
 
     steps:
